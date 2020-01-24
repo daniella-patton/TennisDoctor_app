@@ -1,6 +1,5 @@
 streamlit
 numpy
 pandas
-PIL
 time
 sklearn.externals
