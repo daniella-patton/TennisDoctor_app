@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import os, sys, pickle
+import sys, pickle
 from sklearn.externals import joblib
 
 st.title('TennisDoctor')
