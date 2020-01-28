@@ -14,3 +14,11 @@ unique_names = master.PlayerName.unique()
 #loaded_model = joblib.load(filename)
 
 
+option = st.sidebar.selectbox(
+    'Select the tennis player you would like to predict injury risk from',
+     unique_names)
+
+'You selected:', option
+
+'Starting computation...'
+
