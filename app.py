@@ -8,7 +8,7 @@ st.title('TennisDoctor')
 @st.cache
 def get_data():
     url = "https://github.com/daniella-patton/Test2/blob/master/App_data.csv"
-    return pd.read_csv(url, , error_bad_lines=False)
+    return pd.read_csv(url, error_bad_lines=False)
 
 master = get_data()
 unique_names = master.PlayerName.unique()
