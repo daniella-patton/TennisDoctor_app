@@ -5,9 +5,8 @@ from sklearn.externals import joblib
 
 st.title('TennisDoctor')
 
-url = 'https://github.com/daniella-patton/Test2/blob/master/App_data.csv'
+url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/App_data.csv'
 df = pd.read_csv(url, index_col=0)
-print(df.head(5))
 
 # function to load model
 #@st.cache # cache
