@@ -8,20 +8,21 @@ st.title('TennisDoctor')
 url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/App_data.csv'
 df = pd.read_csv(url, index_col=0)
 
-# function to load model
-#@st.cache # cache
-#def load_csv(modelName):
-#	model = pd.read_csv(os.path.join(folder, modelName + '.csv'))
-#	return model
-        
-#@st.cache
-#def get_data():
-#    url = "https://github.com/daniella-patton/Test2/blob/master/App_data.csv"
-#    return pd.read_csv(url, error_bad_lines=False)
-
-#modelName = 'App_data'
-#master = load_csv(modelName)
 st.write(df)
-unique_names = master.PlayerName.unique()
+unique_names = df.PlayerName.unique()
 
+"""
+# Predicting Risk of Injury in Female Professional Tennis Players
 
+This is a machine learning model that predicts the risk of player injury in the following three months.
+
+Risk options - Lower Risk/Higher Risk
+"""
+
+option = st.sidebar.selectbox(
+    'Select the tennis player you would like to predict injury risk from',
+     unique_names)
+
+'You selected:', option
+
+'Starting computation...'
