@@ -5,13 +5,12 @@ from sklearn.externals import joblib
 
 st.title('TennisDoctor')
 
-st.code("""
 @st.cache
 def get_data():
     url = "https://github.com/daniella-patton/Test2/blob/master/App_data.csv"
     return pd.read_csv(url)
-""", language="python")
 
+master = get_data()
 unique_names = master.PlayerName.unique()
 # Load in the model 
 # load the model from disk
