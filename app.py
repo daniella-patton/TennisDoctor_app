@@ -22,6 +22,7 @@ unique_names = df.PlayerName.unique()
 option = st.sidebar.selectbox(
     'Select the tennis player you would like to predict injury risk from',
      unique_names)
-'You selected:', 
+'You selected:', option
 
-st.dataframe(option)
+name_df = pd.DataFrame([option], columns = ['Player Name']) 
+st.dataframe(name_df)
