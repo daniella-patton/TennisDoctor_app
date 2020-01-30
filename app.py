@@ -5,7 +5,7 @@ from sklearn.externals import joblib
 
 st.title('TennisDoctor')
 
-url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/App_data.csv'
+url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/Filter_Final_Logistic_Regression.csv'
 df = pd.read_csv(url, index_col=0)
 
 st.write(df)
