@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.externals import joblib
-import matplotlib.pyplot as plt
 import altair as alt
 import datetime
 
@@ -30,8 +29,8 @@ option = st.sidebar.selectbox(
 name_df = pd.DataFrame([option], columns = ['Player Name']) 
 st.dataframe(name_df)
 
-arr = np.random.normal(1, 1, size=100)
-plt.hist(arr, bins=20)
-st.pyplot()
+#arr = np.random.normal(1, 1, size=100)
+#plt.hist(arr, bins=20)
+#st.pyplot()
 
 
