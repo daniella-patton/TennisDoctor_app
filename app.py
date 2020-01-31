@@ -8,7 +8,7 @@ import datetime
 """
 # TennisDoctor
 
-A female professional tennis player injury predictor.
+An injury predictor for female professional tennis players.
 
 This is a machine learning model that predicts the three month injury risk of female professional 
 tennis players based off of match, injury, and ranking history. 
