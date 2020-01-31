@@ -24,11 +24,22 @@ unique_names = df.PlayerName.unique()
 option = st.sidebar.selectbox(
     'Select the tennis player you would like to predict injury risk from',
      unique_names)
-'You selected:', option
-
+'You selected:', 
 name_df = pd.DataFrame([option], columns = ['Player Name']) 
 st.dataframe(name_df)
 
+
+name_filter = ml_table2010[ml_table2010['PlayerName'] == option]
+#x = name_filter['StartDate']
+#print(type(x))
+#x = x.apply(lambda x: parser.parse(x).date())
+
+c = alt.Chart(name_filter).mark_bar().encode(
+    x='StartDate',
+    y='Month1MatchesPlayed',
+    color='Injured').interactive()
+
+st.write(c)
 #arr = np.random.normal(1, 1, size=100)
 #plt.hist(arr, bins=20)
 #st.pyplot()
