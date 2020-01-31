@@ -37,22 +37,19 @@ name_filter = df[df['PlayerName'] == option]
 'Based off of your selection, we predict that ',  option, ' is'
 risk_r = 'Not at risk'
 risk_df = pd.DataFrame([risk_r], columns = ['Risk']) 
-st.dataframe(name_df)
-
-name_df = pd.DataFrame([option], columns = ['Player Name']) 
-st.dataframe(name_df)
+st.dataframe(risk_df)
 
 c = alt.Chart(name_filter, width=800,
     height=800).mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
-    color='Injured').interactive()
+    color='Injured',
+    clamp=True).interactive()
+
+c.encoding.x.title = 'Date of Play'
+c.encoding.y.title = 'Number of Games Played'
 
 st.write(c)
 
-
-#arr = np.random.normal(1, 1, size=100)
-#plt.hist(arr, bins=20)
-#st.pyplot()
 
 
