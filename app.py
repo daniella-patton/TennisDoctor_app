@@ -5,7 +5,6 @@ from sklearn.externals import joblib
 import matplotlib.pyplot as plt
 import datetime
 
-
 """
 # TennisDoctor
 
