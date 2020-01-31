@@ -29,7 +29,7 @@ name_df = pd.DataFrame([option], columns = ['Player Name'])
 st.dataframe(name_df)
 
 
-name_filter = ml_table2010[ml_table2010['PlayerName'] == option]
+name_filter = df[df['PlayerName'] == option]
 #x = name_filter['StartDate']
 #print(type(x))
 #x = x.apply(lambda x: parser.parse(x).date())
