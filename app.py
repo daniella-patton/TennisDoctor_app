@@ -49,7 +49,7 @@ c = alt.Chart(name_filter, width=800,
 
 
 c.encoding.x.title = 'Date of Play'
-c.encoding.y.title = 'Number of Games Played'
+c.encoding.y.title = 'Number of Matches Played'
 
 st.write(c)
 
