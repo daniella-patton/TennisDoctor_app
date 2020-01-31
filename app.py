@@ -8,14 +8,15 @@ import datetime
 """
 # TennisDoctor
 
-This is a machine learning model that predicts the three month injury risk of female professional 
-tennis players.
+A female professional tennis player injury predictor.
 
-This model is based off of privious match, injury, and ranking history. 
+This is a machine learning model that predicts the three month injury risk of female professional 
+tennis players based off of match, injury, and ranking history. 
 
 Select the player of interest from the drop down menu on the left. 
 
 Risk options - Lower Risk/Higher Risk
+
 """
 url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/Filter_Final_Logistic_Regression.csv'
 df = pd.read_csv(url, index_col=0)
