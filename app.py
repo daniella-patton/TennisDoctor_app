@@ -39,13 +39,14 @@ risk_r = 'Not at risk'
 risk_df = pd.DataFrame([risk_r], columns = ['Risk']) 
 st.dataframe(risk_df)
 
-c = alt.Chart(name_filter, width=600,
-    height=600, title="Player Matches Played and Injury History").mark_bar().encode(
+c = alt.Chart(name_filter, width=800,
+    height=600, title="Matches Played and Injury History").mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
     color='Injured').configure_axis(
     labelFontSize= 15,
-    titleFontSize= 15).configure_title(fontSize=24).interactive()
+    titleFontSize= 15).configure_title(fontSize=24).configure_legend(fontSize=15).interactive()
+
 
 c.encoding.x.title = 'Date of Play'
 c.encoding.y.title = 'Number of Games Played'
