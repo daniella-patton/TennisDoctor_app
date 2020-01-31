@@ -43,8 +43,7 @@ c = alt.Chart(name_filter, width=800,
     height=800).mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
-    color='Injured',
-    clamp=True).interactive()
+    color='Injured').interactive()
 
 c.encoding.x.title = 'Date of Play'
 c.encoding.y.title = 'Number of Games Played'
