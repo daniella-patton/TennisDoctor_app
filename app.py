@@ -28,6 +28,8 @@ option = st.sidebar.selectbox(
 name_df = pd.DataFrame([option], columns = ['Player Name']) 
 st.dataframe(name_df)
 
-#arr = np.random.normal(1, 1, size=100)
-#plt.hist(arr, bins=20)
-#st.pyplot()
+arr = np.random.normal(1, 1, size=100)
+plt.hist(arr, bins=20)
+st.pyplot()
+
+
