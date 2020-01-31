@@ -34,12 +34,15 @@ name_filter = df[df['PlayerName'] == option]
 #print(type(x))
 #x = x.apply(lambda x: parser.parse(x).date())
 
-c = alt.Chart(name_filter).mark_bar().encode(
+c = alt.Chart(name_filter, width=400,
+    height=400).mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
     color='Injured').interactive()
 
 st.write(c)
+
+
 #arr = np.random.normal(1, 1, size=100)
 #plt.hist(arr, bins=20)
 #st.pyplot()
