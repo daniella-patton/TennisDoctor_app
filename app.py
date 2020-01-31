@@ -45,7 +45,7 @@ c = alt.Chart(name_filter, width=800,
     y='Month1MatchesPlayed',
     color='Injured').configure_axis(
     labelFontSize= 15,
-    titleFontSize= 15).configure_title(fontSize=24).configure_legend(fontSize=15).interactive()
+    titleFontSize= 15).configure_title(fontSize=24).interactive()
 
 
 c.encoding.x.title = 'Date of Play'
