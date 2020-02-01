@@ -37,6 +37,12 @@ name_filter = df[df['PlayerName'] == option]
 
 'Based off of your selection, we predict that ',  option, ' is'
 
+# load the model from disk
+loaded_model = pickle.load(open('https://github.com/daniella-patton/Test2/blob/master/random_forest_model.sav?raw=true', 'rb'))
+#result = loaded_model.score(X_test, Y_test)
+#print(result)
+
+
 risk_r = 'Not at risk'
 risk_df = pd.DataFrame([risk_r], columns = ['Risk']) 
 st.dataframe(risk_df)
