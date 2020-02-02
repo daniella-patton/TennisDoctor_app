@@ -44,7 +44,6 @@ else: # otherwise use the current working directory
     folder = os.path.abspath(os.getcwd())
 
 # function to load model
-@st.cache # cache
 def load_model(modelName):
 	model = pd.read_pickle(os.path.join(folder, modelName + '.sav'))
 	return model
