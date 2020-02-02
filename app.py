@@ -38,7 +38,21 @@ name_filter = df[df['PlayerName'] == option]
 'Based off of your selection, we predict that ',  option, ' is'
 
 # load the model from disk
-loaded_model = pickle.load(open('https://github.com/daniella-patton/Test2/blob/master/random_forest_model.sav', 'rb'))
+if len(sys.argv) > 1: # parse command-line argument if supplied (folder path)
+    folder = os.path.abspath(sys.argv[1])
+else: # otherwise use the current working directory
+    folder = os.path.abspath(os.getcwd())
+
+# function to load model
+@st.cache # cache
+def load_model(modelName):
+	model = pd.read_pickle(os.path.join(folder, modelName + '.sav'))
+	return model
+
+# load model
+modelName = 'random_forest_model'
+model = load_model(modelName)
+
 
 #result = loaded_model.score(X_test, Y_test)
 #print(result)
