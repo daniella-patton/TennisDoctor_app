@@ -4,4 +4,3 @@ pandas
 sklearn
 altair
 datetime
-pickle
