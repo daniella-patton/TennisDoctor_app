@@ -5,6 +5,7 @@ from sklearn.externals import joblib
 import altair as alt
 import datetime
 import os, sys, pickle
+from PIL import Image
 
 """
 # TennisDoctor
@@ -37,6 +38,8 @@ name_filter = df[df['PlayerName'] == option]
 
 'Based off of your selection, we predict that ',  option, ' is'
 
+# Running the machine learning model on the data
+
 # load the model from disk
 if len(sys.argv) > 1: # parse command-line argument if supplied (folder path)
     folder = os.path.abspath(sys.argv[1])
@@ -52,14 +55,26 @@ def load_model(modelName):
 modelName = 'random_forest_model'
 model = load_model(modelName)
 
-
 #result = loaded_model.score(X_test, Y_test)
 #print(result)
-
 
 risk_r = 'Not at risk'
 risk_df = pd.DataFrame([risk_r], columns = ['Risk']) 
 st.dataframe(risk_df)
+
+# LOADING IN PICTURE
+
+#def load_pic(option):
+#	model = pd.read_pickle(os.path.join(folder, 'WTA_Pictures', option + '.jpg'))
+#	return model
+
+#file = option + '.jpg'
+#if file in entries:
+#    image = Image.open(file)
+#    image.show()
+#else:
+#    image = Image.open('base.jpg')
+#st.image(image, caption= option, use_column_width=True)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
