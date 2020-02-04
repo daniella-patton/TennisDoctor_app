@@ -63,7 +63,6 @@ risk_df = pd.DataFrame([risk_r], columns = ['Risk'])
 st.dataframe(risk_df)
 
 # LOADING IN PICTURE
-
 def load_pic(option):
 	try:
 		file = os.path.join(folder, 'WTA_Pictures', option + '.jpg')
@@ -74,9 +73,10 @@ def load_pic(option):
 	return image
 
 player_pic = load_pic(option)
+  
 #else:
 #    image = Image.open('base.jpg')
-st.image(player_pic, caption= option, width = 1 ,use_column_width=True)
+st.image(player_pic, caption= option, , width=None)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
