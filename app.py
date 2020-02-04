@@ -28,7 +28,7 @@ option = st.sidebar.selectbox(
      unique_names)
 'You selected:', 
 with st.echo():
-	st.write(option)
+	option
 
 #name_df = pd.DataFrame([option], columns = ['Player Name']) 
 #st.dataframe(name_df)
