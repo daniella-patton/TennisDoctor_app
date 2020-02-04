@@ -64,14 +64,13 @@ st.dataframe(risk_df)
 
 # LOADING IN PICTURE
 
-#def load_pic(option):
-#	model = pd.read_pickle(os.path.join(folder, 'WTA_Pictures', option + '.jpg'))
-#	return model
+def load_pic(option):
+	file = os.path.join(folder, 'WTA_Pictures', option + '.jpg')
+	image = Image.open(file)
+	return image
 
-#file = option + '.jpg'
-#if file in entries:
-#    image = Image.open(file)
-#    image.show()
+player_pic = load_pic('Adriana Perez')
+player_pic.show()
 #else:
 #    image = Image.open('base.jpg')
 #st.image(image, caption= option, use_column_width=True)
