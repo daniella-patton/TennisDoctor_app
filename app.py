@@ -27,8 +27,11 @@ option = st.sidebar.selectbox(
     'Select the tennis player you would like to predict injury risk from',
      unique_names)
 'You selected:', 
-name_df = pd.DataFrame([option], columns = ['Player Name']) 
-st.dataframe(name_df)
+with st.echo():
+	write(option)
+
+#name_df = pd.DataFrame([option], columns = ['Player Name']) 
+#st.dataframe(name_df)
 
 
 name_filter = df[df['PlayerName'] == option]
@@ -76,7 +79,7 @@ player_pic = load_pic(option)
   
 #else:
 #    image = Image.open('base.jpg')
-st.image(player_pic, caption= option, , width=None)
+st.image(player_pic, caption = option, width=None)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
