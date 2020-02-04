@@ -76,7 +76,7 @@ def load_pic(option):
 player_pic = load_pic(option)
 #else:
 #    image = Image.open('base.jpg')
-st.image(player_pic, caption= option, width = 3 ,use_column_width=True)
+st.image(player_pic, caption= option, width = 1 ,use_column_width=True)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
