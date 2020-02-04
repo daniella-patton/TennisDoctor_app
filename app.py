@@ -70,10 +70,9 @@ def load_pic(option):
 	return image
 
 player_pic = load_pic('Adriana Perez')
-player_pic.show()
 #else:
 #    image = Image.open('base.jpg')
-#st.image(image, caption= option, use_column_width=True)
+st.image(player_pic, caption= option, use_column_width=True)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
