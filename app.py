@@ -65,11 +65,15 @@ st.dataframe(risk_df)
 # LOADING IN PICTURE
 
 def load_pic(option):
-	file = os.path.join(folder, 'WTA_Pictures', option + '.jpg')
-	image = Image.open(file)
+	try:
+		file = os.path.join(folder, 'WTA_Pictures', option + '.jpg')
+		image = Image.open(file)
+	except IOError:
+		file = os.path.join(folder, 'WTA_Pictures', 'base.jpg') # base.jpg
+		image = Image.open(file)
 	return image
 
-player_pic = load_pic('Adriana Perez')
+player_pic = load_pic(option)
 #else:
 #    image = Image.open('base.jpg')
 st.image(player_pic, caption= option, use_column_width=True)
