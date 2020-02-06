@@ -27,7 +27,6 @@ unique_names = df.PlayerName.unique()
 option = st.sidebar.selectbox('Select the tennis player',
      unique_names)
 		
-'You selected:', 
 st.markdown('You selected **' + str(option) + '**')
 
 #name_df = pd.DataFrame([option], columns = ['Player Name']) 
@@ -39,7 +38,7 @@ name_filter = df[df['PlayerName'] == option]
 #print(type(x))
 #x = x.apply(lambda x: parser.parse(x).date())
 
-'Based off of your selection, we predict that ',  option, ' is'
+'We predict that ',  option, ' is:'
 
 # Running the machine learning model on the data
 
@@ -61,9 +60,11 @@ model = load_model(modelName)
 #result = loaded_model.score(X_test, Y_test)
 #print(result)
 
-risk_r = 'Not at risk'
-risk_df = pd.DataFrame([risk_r], columns = ['Risk']) 
-st.dataframe(risk_df)
+risk_r = 'At low risk'
+
+st.markdown(**' + str(risk_r) + '**', unsafe_allow_html=True)
+st.markdown('<span style="font-size:36pt; font-style:bold;">NoveList</span><br><span style="font-size:24pt; font-style:italic;">Find your next page turner</span>', unsafe_allow_html=True)
+
 
 # LOADING IN PICTURE
 def load_pic(option):
@@ -80,6 +81,9 @@ player_pic = load_pic(option)
 #else:
 #    image = Image.open('base.jpg')
 st.image(player_pic, caption = option, width=None)
+
+risk_df = pd.DataFrame([risk_r, st.image(player_pic, caption = option, width=None)], columns = ['Risk', str(option)]) 
+st.dataframe(risk_df)
 
 c = alt.Chart(name_filter, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
