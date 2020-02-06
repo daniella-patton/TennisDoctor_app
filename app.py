@@ -27,8 +27,7 @@ option = st.sidebar.selectbox('Select the tennis player you would like to predic
      unique_names)
 		
 'You selected:', 
-st.write(option)
-	
+st.markdown('You selected **option**.')
 
 #name_df = pd.DataFrame([option], columns = ['Player Name']) 
 #st.dataframe(name_df)
