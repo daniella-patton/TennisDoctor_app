@@ -12,7 +12,8 @@ st.title('TennisDoctor')
 st.header('An injury predictor for female professional tennis players.')
 
 """
-Select the player of interest from the drop down menu on the left. 
+
+Select the player of interest from the drop-down menu on the left. 
 
 This is a machine learning model that predicts the three month injury risk of female professional 
 tennis players based off of match, injury, and ranking history. 
@@ -23,7 +24,7 @@ Risk options - Lower Risk/Higher Risk
 url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/Filter_Final_Logistic_Regression.csv'
 df = pd.read_csv(url, index_col=0)
 unique_names = df.PlayerName.unique()
-option = st.sidebar.selectbox('Select the tennis player you would like to predict injury risk from',
+option = st.sidebar.selectbox('Select the tennis player',
      unique_names)
 		
 'You selected:', 
