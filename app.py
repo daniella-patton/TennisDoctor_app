@@ -7,19 +7,19 @@ import datetime
 import os, sys, pickle
 from PIL import Image
 
-"""
-# TennisDoctor
 
-An injury predictor for female professional tennis players.
+st.title('TennisDoctor')
+st.header('An injury predictor for female professional tennis players.')
+
+"""
+Select the player of interest from the drop down menu on the left. 
 
 This is a machine learning model that predicts the three month injury risk of female professional 
 tennis players based off of match, injury, and ranking history. 
 
-Select the player of interest from the drop down menu on the left. 
-
 Risk options - Lower Risk/Higher Risk
-
 """
+
 url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/Filter_Final_Logistic_Regression.csv'
 df = pd.read_csv(url, index_col=0)
 unique_names = df.PlayerName.unique()
@@ -27,8 +27,8 @@ option = st.sidebar.selectbox('<span style="font-size:20pt; font-style:bold;"> S
      unique_names)
 		
 'You selected:', 
-with st.echo():
-	option
+st.write(option)
+	
 
 #name_df = pd.DataFrame([option], columns = ['Player Name']) 
 #st.dataframe(name_df)
