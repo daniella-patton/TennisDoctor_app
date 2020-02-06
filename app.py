@@ -82,7 +82,10 @@ player_pic = load_pic(option)
 #    image = Image.open('base.jpg')
 st.image(player_pic, caption = option, width=None)
 
-risk_df = pd.DataFrame([risk_r, st.image(player_pic, caption = option, width=None)], columns = ['Risk', str(option)]) 
+# risk_df = pd.DataFrame([risk_r, st.image(player_pic, caption = option, width=None)], columns = ['Risk', str(option)]) 
+risk_df = pd.DataFrame([risk_r, st.image(player_pic, caption = option, width=None)]) 
+
+
 st.dataframe(risk_df)
 
 c = alt.Chart(name_filter, width=800,
