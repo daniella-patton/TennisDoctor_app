@@ -28,7 +28,7 @@ option = st.sidebar.selectbox('Select the tennis player',
      unique_names)
 		
 'You selected:', 
-st.markdown('You selected **option**.')
+st.markdown('You selected **' + str(option) + '**')
 
 #name_df = pd.DataFrame([option], columns = ['Player Name']) 
 #st.dataframe(name_df)
