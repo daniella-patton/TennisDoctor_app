@@ -54,7 +54,7 @@ def load_model(modelName):
 	return model
 
 # load model
-modelName = 'random_forest_model'
+modelName = 'logistic_model'
 model = load_model(modelName)
 
 #result = loaded_model.score(X_test, Y_test)
@@ -63,9 +63,12 @@ model = load_model(modelName)
 risk_r = 'At low risk'
 
 # st.markdown(**' + str(risk_r) + '**')
-st.markdown('<span style="font-size:36pt; 
-	    font-style:bold;"> str(risk_r)</span><br><span style="font-size:24pt; font-style:italic;
-	    ">Find your next page turner</span>', unsafe_allow_html=True)
+#st.markdown('<span style="font-size:36pt; 
+#	    font-style:bold;"> str(risk_r)</span><br><span style="font-size:24pt; font-style:italic;
+#	    ">Find your next page turner</span>', unsafe_allow_html=True)
+
+st.markdown('<span style="font-size:30pt; 
+	    font-style:bold;"> str(risk_r)</span>', unsafe_allow_html=True)
 
 
 # LOADING IN PICTURE
