@@ -69,22 +69,13 @@ tennis players based off of match, injury, and ranking history.
 Risk options - Lower Risk/Higher Risk
 """
 
-#url = 'https://raw.githubusercontent.com/daniella-patton/Test2/master/Filter_Final_Logistic_Regression.csv'
-#df = pd.read_csv(url, index_col=0)
-#unique_names = df.PlayerName.unique()
 option = st.sidebar.selectbox('Select the tennis player',
      unique_names)
 		
 st.markdown('You selected **' + str(option) + '**')
 
-#name_df = pd.DataFrame([option], columns = ['Player Name']) 
-#st.dataframe(name_df)
-
 
 name_filter = df[df['PlayerName'] == option]
-#x = name_filter['StartDate']
-#print(type(x))
-#x = x.apply(lambda x: parser.parse(x).date())
 
 'We predict that ',  option, ' is:'
 
@@ -102,8 +93,6 @@ if results_p < 0.75 and results_p >= 0.5:
 if results_p < 0.5:
     risk_as = 'At low risk of injury'
 
-#print(result)
-#risk_r = 'At low risk'
 st.markdown('**' + risk_as + '**')
 risk_r = 'At low risk'
 
