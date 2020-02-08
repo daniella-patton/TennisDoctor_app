@@ -97,7 +97,17 @@ if results_p < 0.5:
     risk_as = 'At low risk of injury'
 
 st.markdown('**' + risk_as + '**')
-risk_r = 'At low risk'
+
+
+csv_name = 'ML_filtered_career'
+df2 = load_csv(csv_name)
+name_filter2 = df2[df2['PlayerName'] == option]
+name_filter2 = name_filter.drop(['PlayerName'], axis=1)
+
+c = alt.Chart(name_filter).mark_bar().encode(
+    x='Age',
+    y='Doubles_Ranking'
+)
 
 #c = alt.Chart(name_filter, width=800,
 #    height=600, title="Matches Played and Injury History").mark_bar().encode(
