@@ -29,7 +29,7 @@ def load_model(modelName):
 
 # function to load in csv
 def load_csv(csv_name):
-    player_csv = pd.read_csv(os.path.join(folder, csv_name + '.csv'), index_col=0)
+    player_csv = pd.read_csv(os.path.join(folder, csv_name + '.csv'))
     return player_csv
 
 # function to load image
