@@ -119,15 +119,15 @@ c = alt.Chart(name_filter2).mark_bar().encode(
 #c.encoding.x.title = 'Date of Play'
 #c.encoding.y.title = 'Number of Matches Played'
 
-source = pd.DataFrame({
-    'a': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
-    'b': [28, 55, 43, 91, 81, 53, 19, 87, 52]
-})
+#source = pd.DataFrame({
+#    'a': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
+#    'b': [28, 55, 43, 91, 81, 53, 19, 87, 52]
+#})
 
-c = alt.Chart(source).mark_bar().encode(
-    x='a',
-    y='b'
-)
+#c = alt.Chart(source).mark_bar().encode(
+#    x='a',
+#    y='b'
+#)
 
 
 st.write(c)
