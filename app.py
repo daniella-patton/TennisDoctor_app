@@ -74,6 +74,10 @@ option = st.sidebar.selectbox('Select the tennis player',
 		
 st.markdown('You selected **' + str(option) + '**')
 
+# Load in Picture
+player_pic = load_pic(option)
+st.image(player_pic, caption = option, width=None)
+
 
 name_filter = df[df['PlayerName'] == option]
 name_filter = name_filter.drop(['PlayerName'], axis=1)
