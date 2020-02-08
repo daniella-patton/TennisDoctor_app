@@ -111,8 +111,8 @@ def load_csv2(csv_name):
 csv_name = 'ML_filtered_career'
 df2 = load_csv2(csv_name)
 name_filter2 = df2[df2['PlayerName'] == option]
-name_filter2 = name_filter2.drop(['PlayerName'])
-
+#name_filter2 = name_filter2.drop(['PlayerName'])
+st.write(name_filter2)
 c = alt.Chart(name_filter2).mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed'
