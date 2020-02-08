@@ -115,8 +115,11 @@ name_filter2 = df2[df2['PlayerName'] == option]
 st.write(name_filter2)
 c = alt.Chart(name_filter2).mark_bar().encode(
     x='StartDate',
-    y='Month1MatchesPlayed'
-)
+    y='Month1MatchesPlayed',
+color='Injured').configure_axis(labelFontSize= 15, titleFontSize= 15).configure_title(fontSize=24).interactive()
+c.encoding.x.title = 'Date of Play'
+c.encoding.y.title = 'Number of Matches Played'
+
 
 #c = alt.Chart(name_filter, width=800,
 #    height=600, title="Matches Played and Injury History").mark_bar().encode(
@@ -127,16 +130,6 @@ c = alt.Chart(name_filter2).mark_bar().encode(
 #    titleFontSize= 15).configure_title(fontSize=24).interactive()
 #c.encoding.x.title = 'Date of Play'
 #c.encoding.y.title = 'Number of Matches Played'
-
-#source = pd.DataFrame({
-#    'a': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
-#    'b': [28, 55, 43, 91, 81, 53, 19, 87, 52]
-#})
-
-#c = alt.Chart(source).mark_bar().encode(
-#    x='a',
-#    y='b'
-#)
 
 
 st.write(c)
