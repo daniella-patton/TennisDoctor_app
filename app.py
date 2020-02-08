@@ -29,7 +29,7 @@ def load_model(modelName):
 
 # function to load in csv
 def load_csv(csv_name):
-    player_csv = pd.read_csv(os.path.join(folder, csv_name + '.csv'))
+    player_csv = pd.read_csv(os.path.join(folder, csv_name + '.csv', index_col=0))
     return player_csv
 
 # function to load image
@@ -103,8 +103,13 @@ if results_p < 0.5:
 st.markdown('**' + risk_as + '**')
 
 
+# function to load in csv
+def load_csv2(csv_name):
+    player_csv = pd.read_csv(os.path.join(folder, csv_name + '.csv'))
+    return player_csv
+
 csv_name = 'ML_filtered_career'
-df2 = load_csv(csv_name)
+df2 = load_csv2(csv_name)
 name_filter2 = df2[df2['PlayerName'] == option]
 name_filter2 = name_filter2.drop(['PlayerName'])
 
