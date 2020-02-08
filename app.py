@@ -76,6 +76,9 @@ st.markdown('You selected **' + str(option) + '**')
 
 
 name_filter = df[df['PlayerName'] == option]
+name_filter = name_filter.drop(['PlayerName'], axis=1)
+
+
 
 'We predict that ',  option, ' is:'
 
