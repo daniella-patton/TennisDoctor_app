@@ -112,7 +112,7 @@ csv_name = 'ML_filtered_career'
 df2 = load_csv2(csv_name)
 name_filter2 = df2[df2['PlayerName'] == option]
 
-c = alt.Chart(name_filter2, width=800,
+c = alt.Chart(name_filter2, width= 500,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
