@@ -120,9 +120,9 @@ name_filter2 = df2[df2['PlayerName'] == option]
 #c.encoding.x.title = 'Date of Play'
 #c.encoding.y.title = 'Number of Matches Played'
 
-st.write(name_filter)
+#st.write(name_filter)
 
-c = alt.Chart(name_filter, width=800,
+c = alt.Chart(name_filter2, width=800,
     height=600, title="Matches Played and Injury History").mark_bar().encode(
     x='StartDate',
     y='Month1MatchesPlayed',
