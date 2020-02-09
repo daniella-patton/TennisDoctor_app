@@ -112,24 +112,24 @@ csv_name = 'ML_filtered_career'
 df2 = load_csv2(csv_name)
 name_filter2 = df2[df2['PlayerName'] == option]
 #name_filter2 = name_filter2.drop(['PlayerName'])
-st.write(name_filter2)
-c = alt.Chart(name_filter2).mark_bar().encode(
-    x='StartDate',
-    y='Month1MatchesPlayed',
-color='Injured').configure_axis(labelFontSize= 15, titleFontSize= 15).configure_title(fontSize=24).interactive()
-c.encoding.x.title = 'Date of Play'
-c.encoding.y.title = 'Number of Matches Played'
-
-
-#c = alt.Chart(name_filter, width=800,
-#    height=600, title="Matches Played and Injury History").mark_bar().encode(
+#st.write(name_filter2)
+#c = alt.Chart(name_filter2).mark_bar().encode(
 #    x='StartDate',
 #    y='Month1MatchesPlayed',
-#    color='Injured').configure_axis(
-#    labelFontSize= 15,
-#    titleFontSize= 15).configure_title(fontSize=24).interactive()
+#color='Injured').configure_axis(labelFontSize= 15, titleFontSize= 15).configure_title(fontSize=24).interactive()
 #c.encoding.x.title = 'Date of Play'
 #c.encoding.y.title = 'Number of Matches Played'
+
+
+c = alt.Chart(name_filter, width=800,
+    height=600, title="Matches Played and Injury History").mark_bar().encode(
+    x='StartDate',
+    y='Month1MatchesPlayed',
+    color='Injured').configure_axis(
+    labelFontSize= 15,
+    titleFontSize= 15).configure_title(fontSize=24).interactive()
+c.encoding.x.title = 'Date of Play'
+c.encoding.y.title = 'Number of Matches Played'
 
 
 st.write(c)
