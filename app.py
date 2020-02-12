@@ -61,12 +61,13 @@ st.header('An injury predictor for female professional tennis players.')
 
 """
 
+
 Select the player of interest from the drop-down menu on the left. 
 
-This is a machine learning model that predicts the three month injury risk of female professional 
+This is a logistic regression machine learning model that predicts the three month injury risk of female professional 
 tennis players based off of match, injury, and ranking history. 
 
-Risk options - Lower Risk/Higher Risk
+Risk options - Low Risk/Moderate Risk/Higher Risk
 """
 
 option = st.sidebar.selectbox('Select the tennis player',
@@ -112,16 +113,21 @@ csv_name = 'ML_filtered_career'
 df2 = load_csv2(csv_name)
 name_filter2 = df2[df2['PlayerName'] == option]
 
+"""
+
+Player specific game and injury history broken down by month is visible in the plot below.
+
+"""
 c = alt.Chart(name_filter2, width= 700,
-    height=600, title="Matches Played and Injury History").mark_bar().encode(
+    height=600, title="Games Played and Injury History").mark_bar().encode(
     x='StartDate',
-    y='Month1MatchesPlayed',
+    y='Month1GamesPlayed',
     color='Injured').configure_axis(
     labelFontSize= 15,
     titleFontSize= 15).configure_title(fontSize=24).interactive()
 
 c.encoding.x.title = 'Date of Play'
-c.encoding.y.title = 'Number of Matches Played'
+c.encoding.y.title = 'Number of Games Played'
 
 
 st.write(c)
