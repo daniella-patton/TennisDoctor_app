@@ -26,5 +26,5 @@ requirements.txt
 The requirements file for Heroku
 
 # License
-
+@MIT
 
